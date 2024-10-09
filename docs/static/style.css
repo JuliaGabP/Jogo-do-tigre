@@ -1,0 +1,94 @@
+body {
+    font-family: FreeMono, monospace;
+    background-color: #ffb487;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 60px;
+    background-color: #ff8c00;
+    color: black;
+    border-radius: 5px 5px 0 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ff8c00;
+    color: black;
+    border-radius: 0 0 5px 5px;
+    margin-top: 20px;
+}
+/* Estilização da imagem */
+.image-container {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+/* Estilo base para os botões */
+.btn {
+    font-size: 18px; /* Ajuste o tamanho conforme necessário */
+    padding: 10px 20px; /* Espaço interno do botão */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff8c00; /* Cor de fundo padrão do botão */
+    color: black; /* Cor do texto do botão */
+    text-align: center; /* Centraliza o texto do botão */
+    display: inline-block; /* Exibe os botões lado a lado, se necessário */
+    transition: background-color 0.3s; /* Transição suave para a mudança de cor */
+}
+
+/* Estilo para o estado hover dos botões */
+.btn:hover {
+    background-color: #f1c40f; /* Cor amarela para o hover */
+    color: black; /* Opcional: muda a cor do texto para preto no hover */
+}
+/* Estilo base para links */
+a {
+    color: #FF4500; /* Cor laranja para links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Deixa o texto dos links em negrito, opcional */
+}
+
+/* Estilo para o estado hover dos links */
+a:hover {
+    color: #512f11; /* Cor marrom para hover, opcional */
+    text-decoration: underline; /* Adiciona sublinhado no hover, opcional */
+}

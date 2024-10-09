@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiger Game</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Tiger Game</h1>
+        {% if current_user.is_authenticated %}
+            <p>Hi, {{ current_user.username }}!</p> 
+            <a href="{{ url_for('game') }}">Play</a>
+            <a href="{{ url_for('result') }}">Graphic</a> 
+            <a href="{{ url_for('view_registration') }}">View Registration</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </header>
+    <main>
+        <p>This is a simulator of the Tiger game to show how risky it is to bet.</p>
+    </main>
+    
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/imagem1.jpeg') }}" alt="Tigrito">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tiger Game Simulator.</p>
+    </footer>
+</body>
+</html>

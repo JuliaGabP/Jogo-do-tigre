@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Game Results{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Betting Results</h2>
+    <div class="card">
+        <div class="card-body" style="background-color: white;">
+            <div style="width: 100%; margin: 20px auto;">
+                <canvas id="resultChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/chart-data')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                var ctx = document.getElementById('resultChart').getContext('2d');
+                var resultChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.x,  
+                        datasets: [{
+                            label: 'Balance after each bet',
+                            data: data.y,  
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderWidth: 1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Departures'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Balance'
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+    });
+</script>
+{% endblock %}

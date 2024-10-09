@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Play Game{% endblock %}
+
+{% block content %}
+<!-- Exibição das mensagens -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} text-center">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="text-center">
+    <h2>Balance: {{ balance }}</h2>
+    <form method="POST">
+        <div class="slot-machine">
+            <img src="{{ url_for('static', filename='images/roleta.jpeg') }}" alt="Slot Machine" class="img-fluid">
+        </div>
+        <input type="number" name="bet" placeholder="Bet Amount" required class="form-control my-3">
+        <button type="submit" class="btn btn-success">Bet</button>
+    </form>
+</div>
+{% endblock %}
